@@ -36,4 +36,7 @@ const moonPhaseNumbers = {
   "waning crescent": "0.75-1",
 };
 
-getWeather("san martin buenos aires argentina c1650");
+// getWeather("san martin buenos aires argentina c1650");
+// getWeather("north stradbroke");
+// getWeather("san clemente california");
+console.log(getWeather("london england"));
