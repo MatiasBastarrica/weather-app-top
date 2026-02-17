@@ -11,16 +11,41 @@ export const Form = (function Form() {
         searchInput.setCustomValidity("You should enter a location!");
         searchInput.reportValidity();
       } else {
-        getWeather(searchInput.value);
+        // getWeather(searchInput.value);
+        getWeather(searchInput.value).then((locationWeather) => {
+          for (const dataName in locationWeather) {
+            if (!Object.hasOwn(locationWeather, dataName)) continue;
+
+            const dataValue = locationWeather[dataName];
+
+            Output.addData(dataName, dataValue);
+          }
+        });
       }
     });
   }
 
   return {
-    elements: {
-      btn,
-      searchInput,
-    },
     setListeners,
+  };
+})();
+
+const Output = (function output() {
+  const output = document.querySelector("output");
+
+  function addData(name, value) {
+    const title = document.createElement("h2");
+    title.textContent = name;
+
+    const description = document.createElement("p");
+    description.textContent = value;
+
+    output.appendChild(title);
+    output.appendChild(description);
+  }
+
+  return {
+    element: output,
+    addData,
   };
 })();
