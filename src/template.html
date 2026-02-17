@@ -7,10 +7,16 @@
   </head>
   <body>
     <h1>Weather query</h1>
-    <form action="#">
+    <form action="#" novalidate>
       <label for="location">Check the weather in your location</label>
-      <input type="text" placeholder="Location" id="location" name="location" />
-      <button type="submit">Search</button>
+      <input
+        type="text"
+        placeholder="Location"
+        id="location"
+        name="location"
+        required
+      />
+      <button type="submit" class="search-btn">Search</button>
     </form>
   </body>
 </html>
