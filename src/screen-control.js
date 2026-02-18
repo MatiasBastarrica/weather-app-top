@@ -83,6 +83,9 @@ const Output = (function output() {
   let degreeUnit = "celsius";
 
   function addData(data) {
+    if (output.childElementCount) {
+      clearDisplay();
+    }
     const header = document.createElement("div");
     header.classList.add("output-header");
     output.appendChild(header);
@@ -242,6 +245,14 @@ const Output = (function output() {
       img.src = response;
     });
     imgContainer.appendChild(img);
+  }
+
+  function clearDisplay() {
+    let childElements = Array.from(output.children);
+
+    childElements.forEach((child) => {
+      child.remove();
+    });
   }
 
   return {
