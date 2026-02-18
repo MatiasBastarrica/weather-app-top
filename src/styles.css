@@ -56,13 +56,126 @@ h6 {
 
 body {
   background-color: lightblue;
-  color: whi;
+  font-size: 1.025rem;
+}
+
+input,
+button {
+  border: 2px solid lightyellow;
+  border-radius: 200px;
+  padding: 0.35rem 1rem;
+  background-color: lightskyblue;
+}
+
+form {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+input {
+  flex-basis: 400px;
+}
+
+input::placeholder {
+  color: #3e3e3e;
+}
+
+button {
+  cursor: pointer;
 }
 
 /* ### NAV ### */
 
 .nav {
   display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
   align-items: center;
   justify-content: space-between;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.nav > h1,
+.nav > button {
+  flex-shrink: 0;
+}
+
+/* ### OUTPUT ### */
+
+output {
+  display: block;
+  max-width: 70vw;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.output-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.output-main-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-content-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  text-align: center;
+}
+
+.temp-section {
+  align-self: center;
+}
+
+.temperature {
+  font-size: 3rem;
+}
+
+.temp-extremes {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.img-container {
+  flex-shrink: 0;
+}
+
+.gif-img {
+  border-radius: 0.6rem;
+}
+
+.extra-section {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.extra-section > * {
+  margin-block-start: 1rem;
+  flex: 1;
+  min-width: 170px;
+}
+
+.extra-section h3 {
+  margin-block-end: 0.5rem;
+}
+
+.extra-section > div > div + div {
+  margin-block-start: 0.325rem;
 }
