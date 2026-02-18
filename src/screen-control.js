@@ -24,6 +24,10 @@ export const Form = (function Form() {
     unitBtn.addEventListener("click", function (e) {
       // toggleUnit(Output.degreeUnit,num)
 
+      if (!Output.element.childElementCount) {
+        return;
+      }
+
       let unit;
 
       if (Output.degreeUnit === "celsius") {
@@ -74,31 +78,31 @@ export const Form = (function Form() {
 const Output = (function output() {
   const output = document.querySelector("output");
 
-  const header = document.createElement("div");
-  header.classList.add("output-header");
-  output.appendChild(header);
-
-  const mainContentSection = document.createElement("div");
-  mainContentSection.classList.add("output-main-section");
-  output.appendChild(mainContentSection);
-
-  const imgContainer = document.createElement("div");
-  imgContainer.classList.add("img-container");
-  mainContentSection.appendChild(imgContainer);
-
-  const mainContentContainer = document.createElement("div");
-  mainContentContainer.classList.add("main-content-container");
-  mainContentSection.appendChild(mainContentContainer);
-
-  const extraSection = document.createElement("div");
-  extraSection.classList.add("extra-section");
-  output.appendChild(extraSection);
-
   let tempElements = {};
   let tempNumbers = {};
   let degreeUnit = "celsius";
 
   function addData(data) {
+    const header = document.createElement("div");
+    header.classList.add("output-header");
+    output.appendChild(header);
+
+    const mainContentSection = document.createElement("div");
+    mainContentSection.classList.add("output-main-section");
+    output.appendChild(mainContentSection);
+
+    const imgContainer = document.createElement("div");
+    imgContainer.classList.add("img-container");
+    mainContentSection.appendChild(imgContainer);
+
+    const mainContentContainer = document.createElement("div");
+    mainContentContainer.classList.add("main-content-container");
+    mainContentSection.appendChild(mainContentContainer);
+
+    const extraSection = document.createElement("div");
+    extraSection.classList.add("extra-section");
+    output.appendChild(extraSection);
+
     const location = document.createElement("h2");
     location.classList.add("location");
     location.textContent = `Location: ${data.address}`;
@@ -248,5 +252,3 @@ const Output = (function output() {
     degreeUnit,
   };
 })();
-
-// the app chrashes if the user clicks the change unit btn with an empy search input
