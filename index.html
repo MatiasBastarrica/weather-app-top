@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+  <script defer src="main.js"></script></head>
+  <body>
+    <h1>Weather query</h1>
+    <form action="#" novalidate id="weather-query">
+      <label for="location">Check the weather in your location</label>
+      <input
+        type="text"
+        placeholder="Location"
+        id="location"
+        name="location"
+        required
+      />
+      <button type="submit" class="search-btn">Search</button>
+    </form>
+    <button type="button" class="toggle-degrees-unit">Change unit</button>
+    <output
+      for="location"
+      form="weather-query"
+      name="weather-output"
+      aria-live="polite"
+    ></output>
+  </body>
+</html>
