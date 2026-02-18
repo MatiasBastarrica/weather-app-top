@@ -51,3 +51,10 @@ h5,
 h6 {
   text-wrap: balance;
 }
+
+/* ### GENERAL ### */
+
+body {
+  background-color: lightblue;
+  color: whi;
+}
