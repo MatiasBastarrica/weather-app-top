@@ -1,0 +1,18 @@
+export const iconDescriptions = {
+  snow: "snow",
+  "snow-showers-day": "snowy-day",
+  "snow-showers-night": "snowy-night",
+  "thunder-rain": "thunder-rain",
+  "thunder-showers-day": "thunder-day-weather",
+  "thunder-showers-night": "thunder-night-weather",
+  rain: "rain",
+  "showers-day": "rainy-day",
+  "showers-night": "rainy-night",
+  fog: "fog",
+  wind: "windy",
+  cloudy: "cloudy-day",
+  "partly-cloudy-day": "cloudy-day",
+  "partly-cloudy-night": "cloudy-night",
+  "clear-day": "clear-day-weather",
+  "clear-night": "clear-night-weather",
+};

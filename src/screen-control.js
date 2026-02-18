@@ -1,4 +1,6 @@
 import { getWeather, getMoonPhase, toggleUnit } from "./weather-data.js";
+import { iconDescriptions } from "./icon-descriptions.js";
+import { getGif } from "./gif-search.js";
 
 export const Form = (function Form() {
   const btn = document.querySelector(".search-btn");
@@ -152,6 +154,12 @@ const Output = (function output() {
     windDir.classList.add("wind-dir");
     windDir.textContent = `Wind direction: ${data.winddir}°`;
 
+    const img = document.createElement("img");
+    img.classList.add("gif-img");
+    getGif(iconDescriptions[data.icon]).then((response) => {
+      img.src = response;
+    });
+
     output.appendChild(location);
     output.appendChild(date);
     output.appendChild(temperature);
@@ -169,6 +177,7 @@ const Output = (function output() {
     output.appendChild(moonSet);
     output.appendChild(sunrise);
     output.appendChild(sunset);
+    output.appendChild(img);
   }
 
   return {
